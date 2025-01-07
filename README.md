@@ -118,20 +118,6 @@ Follow the **NIST 800-161: Incident Response Lifecycle**:
    - Use **Defender for Endpoint** to isolate the machine 🔒.
    - Run anti-malware scans.
 2. Analyze downloaded scripts:
-   - Example query:
-     ```kql
-     let TargetHostname = "windows-target-1";
-     let ScriptNames = dynamic(["eicar.ps1", "exfiltratedata.ps1", "portscan.ps1", "pwncrypt.ps1"]);
-     DeviceProcessEvents
-     | where DeviceName == TargetHostname
-     | where FileName == "powershell.exe"
-     | where ProcessCommandLine contains "-File" and ProcessCommandLine has_any (ScriptNames)
-     | order by TimeGenerated
-     | project TimeGenerated, AccountName, DeviceName, FileName, ProcessCommandLine
-     | summarize Count = count() by AccountName, DeviceName, FileName, ProcessCommandLine
-     ```
-     
-![Screenshot 2025-01-07 144444](https://github.com/user-attachments/assets/f347ae33-4fe7-4ca3-b06b-7de8fbba8431)
 
 3. Remove threats and restore systems:
    - Confirm scripts executed.
@@ -145,7 +131,7 @@ Follow the **NIST 800-161: Incident Response Lifecycle**:
    - Restrict PowerShell usage 🚫.
    - Enhance cybersecurity training programs 📚.
 3. Finalize reporting and close the case:
-   - Mark incident as **True Positive** ✅.
+   - Mark incident as **True Positive** ✅. 
 
 ---
 
