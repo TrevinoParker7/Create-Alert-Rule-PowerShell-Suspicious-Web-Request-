@@ -125,7 +125,7 @@ Follow the **NIST 800-161: Incident Response Lifecycle**:
 
 ### 4️⃣ **Post-Incident Activities** 📝
 1. Document findings and lessons learned 🖊️.
-   - Scripts executed: `pwncrypt.ps1` and `exfiltratedata.ps1`.
+   - Scripts executed: `pwncrypt.ps1` , `exfiltratedata.ps1` , `portscan.ps1` , `eicar.ps1` .
    - Account involved: `system-user`.
 2. Update policies:
    - Restrict PowerShell usage 🚫.
@@ -140,7 +140,7 @@ Follow the **NIST 800-161: Incident Response Lifecycle**:
 |---------------------------------|-----------------------------------|
 | **Affected Device**            | `windows-target-1`               |
 | **Suspicious Commands**        | 4                                |
-| **Scripts Downloaded**         | `portscan.ps1`, `pwncrypt.ps1`   |
+| **Scripts Downloaded**         | `portscan.ps1`, `pwncrypt.ps1`, `eicar.ps1`, `exfiltratedata.ps1`   |
 | **Incident Status**            | Resolved                         |
 
 ---
