@@ -25,10 +25,18 @@ Detecting such behavior is critical to identifying and disrupting an ongoing att
 #### 1️⃣ **Query Logs in Microsoft Defender**
 1. Open **Microsoft EDR**.
 2. Go to the KQL section and enter:
-   ```kql
-   DeviceProcessEvents
-   | take 10
-   ```
+```kql
+DeviceFileEvents
+| top 20 by Timestamp desc
+```
+```kql
+DeviceNetworkEvents
+| top 20 by Timestamp desc
+```
+```kql
+DeviceProcessEvents
+| top 20 by Timestamp desc
+```
 3. Locate suspicious activity, e.g., `powershell.exe` executing `Invoke-WebRequest`.
 4. Refine query for target device:
    ```kql
